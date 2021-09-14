@@ -4,20 +4,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTransitionPractice"
+        xmlns:viewModels="clr-namespace:WpfTransitionPractice.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
+    <Window.DataContext>
+        <viewModels:MainWindowModel/>
+    </Window.DataContext>
+    
     <Window.CommandBindings>
+        <!--
         <CommandBinding 
-            Command="{x:Static local:MainWindow.OpeningAlice}" 
+            Command="{Datax:Static local:MainWindow.OpeningAlice}" 
             Executed="OpeningAlice_Executed"
             CanExecute="OpeningAlice_CanExecute"/>
+        -->
     </Window.CommandBindings>
     
     <Grid>
         <Button Width="161"
                 Content="Aウィンドウを出す" Height="92" Margin="349,125,0,0"
                 HorizontalAlignment="Left" VerticalAlignment="Top"
-                Command="{x:Static local:MainWindow.OpeningAlice}"/>
+                Command="{Binding OpeningAlice}"/>
     </Grid>
 </Window>
